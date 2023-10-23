@@ -1,0 +1,38 @@
+USE dismissal;
+
+CREATE TABLE [dbo].[EmployeeInfo](
+	[EmpId] [int] NOT NULL,
+	[LastName] [nchar](20) NOT NULL,
+	[FirstName] [nchar](20) NOT NULL,
+	[Patronymic] [nchar](20) NOT NULL,
+	[JobName] [nchar](20) NOT NULL,
+	[DepartmentName] [nchar](40) NOT NULL,
+	[EnterDate] [datetime] NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[Dismissal_article](
+	[ArticleId] [int] NOT NULL,
+	[ArticleName] [nchar](40) NOT NULL,
+	[DismissalReason] [nchar](50) NULL,
+	[ArticleNumber] [char](4) NOT NULL,
+	[ArticleParagraphNumber] [char](4) NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[Dismissal_document](
+	[DocId] [int] NOT NULL,
+	[DocumentNumber] [char](4) NOT NULL,
+	[RegDate] [datetime] NOT NULL,
+	[DismissalDate] [datetime] NOT NULL,
+	[DismissalArticleId] [int] NOT NULL,
+	[EmpId] [int] NOT NULL,
+	[Compensation] [real] NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[EmployeeInfo](
+	[EmpId] [int] NOT NULL,
+	[LastName] [nchar](20) NOT NULL,
+	[FirstName] [nchar](20) NOT NULL,
+	[Patronymic] [nchar](20) NOT NULL,
+	[JobName] [nchar](20) NOT NULL,
+	[DepartmentName] [nchar](40) NOT NULL,
+	[EnterDate] [datetime] NULL

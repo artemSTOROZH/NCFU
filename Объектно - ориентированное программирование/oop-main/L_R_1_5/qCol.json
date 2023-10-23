@@ -1,0 +1,44 @@
+{
+    "_items": [
+        {
+            "_front": "15",
+            "_items": [
+                "15",
+                "64",
+                "88"
+            ],
+            "_rear": "88",
+            "name": "numbers"
+        },
+        {
+            "_front": "list",
+            "_items": [
+                "list",
+                "dict",
+                "tuple"
+            ],
+            "_rear": "tuple",
+            "name": "data_structures"
+        },
+        {
+            "_front": "a",
+            "_items": [
+                "a",
+                "b",
+                "c"
+            ],
+            "_rear": "c",
+            "name": "characters"
+        },
+        {
+            "_front": "blue",
+            "_items": [
+                "blue",
+                "red",
+                "green"
+            ],
+            "_rear": "green",
+            "name": null
+        }
+    ]
+}
