@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src = "@drawable/rectangle_pink"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src = "@drawable/circle_green"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src = "@drawable/rectangle_red"
+            android:layout_gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:src = "@drawable/rectangle_blue"
+                android:layout_gravity="center"
+                />
+            <ImageView
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:src = "@drawable/circle_green"
+                android:layout_gravity="center"
+                />
+            <ImageView
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:src = "@drawable/circle_green"
+                android:layout_gravity="center"
+                />
+            <ImageView
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:src = "@drawable/rectangle_yellow"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src = "@drawable/rectangle_red"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src = "@drawable/circle_cyan"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:src = "@drawable/rectangle_brown"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
