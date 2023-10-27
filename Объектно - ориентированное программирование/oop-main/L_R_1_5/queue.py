@@ -29,6 +29,14 @@ class Queue:
     def rear(self):
         return self._rear
 
+    def toJSON(self):
+
+        """Преобразование объекта в JSON - строку. Для каждого объекта, который нельзя сериализировать,
+           берется его представление в виде словаря (__dict__)"""
+
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True, indent=4)
+
     def get_items(self):
 
         """Получение списка элементов очереди"""
@@ -97,11 +105,9 @@ class Queue:
         """Сохранение объекта в JSON - файл"""
 
         queue_json = {'_items' : self._items}
-        if not self.isEmpty():
-            queue_json.update({'_front' : self._front, '_rear' : self._rear})   # Если очередь не пустая,
-                                                                            # то в JSON - файл записывабются значения front и rear
+        str_json = self.toJSON()
         with open(f"{filename}.json", "w") as file:
-            json.dump(queue_json, file, indent=2)
+            file.write(str_json)
 
     @staticmethod
     def load(filename):
