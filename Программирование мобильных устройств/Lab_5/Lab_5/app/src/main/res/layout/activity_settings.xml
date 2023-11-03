@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <RadioGroup android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/rbtn">
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Стек"
+            />
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Очередь"
+            />
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Дек"
+            />
+
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Односвязный список"
+            />
+        <RadioButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Двусвязный список"
+            />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="50dp"
+        android:text="Назад"
+        android:onClick="onClickResult"></Button>
+</LinearLayout>

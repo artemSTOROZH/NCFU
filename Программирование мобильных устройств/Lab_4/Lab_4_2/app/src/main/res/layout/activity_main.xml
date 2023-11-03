@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="216dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="ID"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Лицевой счет"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="ФИО"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Улица"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="72dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Дом"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Квартира"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Тип услуги"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Сумма к оплате"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/cell"
+                        android:text="Оплатить до"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/table_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <HorizontalScrollView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="150px">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="36dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="ID"/>
+                <TextView android:layout_width="100dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Лицевой счет"/>
+                <TextView android:layout_width="200dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="ФИО"/>
+                <TextView android:layout_width="130dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Улица"/>
+                <TextView android:layout_width="72dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Дом"/>
+                <TextView android:layout_width="85dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Квартира"/>
+                <TextView android:layout_width="120dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Тип услуги"/>
+                <TextView android:layout_width="80dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Сумма к оплате"/>
+                <TextView android:layout_width="120dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/cell"
+                    android:text="Оплатить до"/>
+            </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/edits">
+            <EditText android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:id="@+id/id_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="100dp"
+                android:layout_height="31dp"
+                android:id="@+id/personal_account_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="200dp"
+                android:layout_height="31dp"
+                android:id="@+id/fio_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="130dp"
+                android:layout_height="31dp"
+                android:id="@+id/street_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="72dp"
+                android:layout_height="31dp"
+                android:id="@+id/house_number_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="85dp"
+                android:layout_height="31dp"
+                android:id="@+id/apartment_number_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="120dp"
+                android:layout_height="31dp"
+                android:id="@+id/service_type_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="80dp"
+                android:layout_height="31dp"
+                android:id="@+id/sum_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+            <EditText android:layout_width="120dp"
+                android:layout_height="31dp"
+                android:id="@+id/pay_before_edit"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:background="@drawable/cell"/>
+    </LinearLayout>
+    </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:onClick="addRow"
+                android:text="Добавить"
+                android:textSize="12pt"
+                android:background="@color/green"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100px"
+                android:layout_marginLeft="50px"
+                android:layout_marginTop="100px"
+                android:onClick="updateRow"
+                android:text="Изменить"
+                android:textSize="12pt"
+                android:background="@color/yellow"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100px"
+                android:layout_marginLeft="50px"
+                android:layout_marginTop="100px"
+                android:onClick="deleteRow"
+                android:text="Удалить"
+                android:textSize="12pt"
+                android:background="@color/red"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
