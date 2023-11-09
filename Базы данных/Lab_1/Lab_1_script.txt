@@ -1,38 +1,31 @@
 USE dismissal;
 
-CREATE TABLE [dbo].[EmployeeInfo](
-	[EmpId] [int] NOT NULL,
-	[LastName] [nchar](20) NOT NULL,
+CREATE TABLE [dbo].[Employee](
+	[EmpID] [int] PRIMARY KEY NOT NULL,
+	[LastName] [nchar](25) NOT NULL,
 	[FirstName] [nchar](20) NOT NULL,
-	[Patronymic] [nchar](20) NOT NULL,
-	[JobName] [nchar](20) NOT NULL,
-	[DepartmentName] [nchar](40) NOT NULL,
-	[EnterDate] [datetime] NULL
+	[MiddleName] [nchar](20) NULL,
+	[JobTitle] [nchar](25) NOT NULL,
+	[DepartmentName] [nchar](30) NOT NULL,
+	[EnterDate] [date] NULL
 ) ON [PRIMARY]
 
-CREATE TABLE [dbo].[Dismissal_article](
-	[ArticleId] [int] NOT NULL,
-	[ArticleName] [nchar](40) NOT NULL,
-	[DismissalReason] [nchar](50) NULL,
-	[ArticleNumber] [char](4) NOT NULL,
-	[ArticleParagraphNumber] [char](4) NULL
+CREATE TABLE [dbo].[DismissalArticle](
+	[ArticleId] [int] PRIMARY KEY NOT NULL,
+	[Name] [nchar](20) NOT NULL,
+	[DismissalReason] [nchar](30) NULL,
+	[Number] [char](4) NOT NULL,
+	[ParagraphNumber] [char](4) NOT NULL
 ) ON [PRIMARY]
 
-CREATE TABLE [dbo].[Dismissal_document](
-	[DocId] [int] NOT NULL,
-	[DocumentNumber] [char](4) NOT NULL,
-	[RegDate] [datetime] NOT NULL,
-	[DismissalDate] [datetime] NOT NULL,
-	[DismissalArticleId] [int] NOT NULL,
-	[EmpId] [int] NOT NULL,
-	[Compensation] [real] NULL
+CREATE TABLE [dbo].[DismissalDocument](
+	[DocumentID] [int] PRIMARY KEY NOT NULL,
+	[Number] [char](4) NOT NULL,
+	[RegDate] [date] NOT NULL,
+	[DismissalDate] [date] NOT NULL,
+	[ArticleID] [int] NOT NULL
+	FOREIGN KEY (ArticleID) REFERENCES DismissalArticle (ArticleID),
+	[EmpID] [int] NOT NULL
+	FOREIGN KEY (EmpID) REFERENCES Employee (EmpID),
+	[Compensation] [decimal](10, 0) NULL
 ) ON [PRIMARY]
-
-CREATE TABLE [dbo].[EmployeeInfo](
-	[EmpId] [int] NOT NULL,
-	[LastName] [nchar](20) NOT NULL,
-	[FirstName] [nchar](20) NOT NULL,
-	[Patronymic] [nchar](20) NOT NULL,
-	[JobName] [nchar](20) NOT NULL,
-	[DepartmentName] [nchar](40) NOT NULL,
-	[EnterDate] [datetime] NULL

@@ -1,9 +1,7 @@
 {
   "_items": [
-    "second",
-    "third",
+    2.25,
+    3,
     "fourth"
-  ],
-  "_front": "second",
-  "_rear": "fourth"
+  ]
 }

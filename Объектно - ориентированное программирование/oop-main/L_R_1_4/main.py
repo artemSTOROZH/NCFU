@@ -7,11 +7,7 @@
 
 if __name__ == "__main__":
     from queue import Queue
-    queue = Queue(["first", "second", "third"])
-
-    # Атрибуты переднего и конечного элемента очереди
-    print(f"Передний элемент: {queue.front}")
-    print(f"Задний элемент: {queue.rear}")
+    queue = Queue([1, 2.25, 3])
 
     # Добавление в очередь
     print(f"Добавление в очередь: {queue.get_items()}", end=' --> ')
@@ -29,32 +25,23 @@ if __name__ == "__main__":
     with open("object.json", 'r') as file:
         for line in file:
             print(line)
-
-    # Проверка на наличие в очереди элемента
-    print(f"""Проверка на вхождение элемента "second" --> {queue.contains("second")}""")
-    print(f"""Проверка на вхождение элемента "fifth" --> {queue.contains("fifth")}""")
+    # Получение значения следующего элемента в очереди
+    print(f"Получение следующего элемента очереди {queue.get_items()} --> {queue.peek()}")
 
     # Строковое представление объекта
     print(f"Строковое представление объекта: {queue}")
 
-    # Очистка очереди
-    print(f"Очистка очереди: {queue.get_items()}", end=" --> ")
-    queue.clear()
-    print(f"{queue.get_items()}")
-
-    # Проверка объекта на пустоту
-    print(f"Проверка на пустоту: {queue.get_items()} --> {queue.isEmpty()}")
+    # Получение количества элементов в очереди
+    print(f"Количество элементов: {queue.get_items()} --> {queue.count()}")
 
     # Загрузка объекта из JSON - файла
     print("До загрузки")
-    print(f"Элементы очереди: {queue.get_items()}\nПередний элемент: {queue.front}\nЗадний элемент: {queue.rear}")
+    print(f"Элементы очереди: {queue.get_items()}")
     print("\nПосле загрузки")
     queue.load("object")
-    print(f"Элементы очереди: {queue.get_items()}\nПередний элемент: {queue.front}\nЗадний элемент: {queue.rear}")
-    print(f"Проверка на пустоту: {queue.get_items()} --> {queue.isEmpty()}")
+    print(f"Элементы очереди: {queue.get_items()}")
 
     # Арифметические операции над объектом
-    queue.clear()
     queue.enqueue(4)
     print(f"queue / 2 = {queue / 2}")
 
