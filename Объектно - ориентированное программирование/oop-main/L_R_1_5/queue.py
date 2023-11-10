@@ -17,50 +17,31 @@ class Queue:
         """
         self._items = items  # Элементы  очереди
         self.name = name     # Название объекта (необязательно)
-        if len(items) > 0:
-          self._front = items[0]
-          self._rear = items[-1]
 
-    @property
-    def front(self):
-        return self._front
-
-    @property
-    def rear(self):
-        return self._rear
-
-    def toJSON(self):
-
-        """Преобразование объекта в JSON - строку. Для каждого объекта, который нельзя сериализировать,
-           берется его представление в виде словаря (__dict__)"""
-
-        return json.dumps(self, default=lambda o: o.__dict__,
-                          sort_keys=True, indent=4)
 
     def get_items(self):
-
-        """Получение списка элементов очереди"""
+        """Возвращает список всех элементов очереди"""
 
         return self._items
+    def count(self):
+
+        """Получение количества элементов очереди"""
+
+        return len(self._items)
 
     def enqueue(self, item):
         """Добавить элемент в конец очереди"""
+
         self._items.append(item)
-        self._rear = item
-        if len(self._items) == 1:   # Если в очереди всего один элемент, то front = rear
-            self._front = item
     
     def dequeue(self):
         """Вернуть и убрать из очереди первый элемент.
            Если элементов в очереди нет, вызывается IndexError"""
-        if not self.isEmpty():
-          if len(self._items) >= 2:
-            self._front = self._items[1]
-          else:
-            self._front = -1     # Если был удален последний элемент, значение front устанавливается по умолчанию
+
+        if self.count() > 0:
           return self._items.pop(0)
         else:
-          raise IndexError
+          raise IndexError("The queue is empty")
     
     def __str__(self):
 
@@ -68,31 +49,14 @@ class Queue:
 
         return f"{self._items}"
     
-    def isEmpty(self):
+    def peek(self):
 
-        """Проверка на пустоту очереди"""
+        """Возвращает значение следующего элемента в очереди"""
 
-        if len(self._items) < 1:
-          return True
+        if self.count() > 0:
+          return self._items[0]
         else:
-          return False
-    
-    def clear(self):
-
-        """Очистка очереди"""
-
-        self._front = None
-        self._rear = None
-        self._items = []
-    
-    def contains(self, item):
-
-        """Проверка на вхождение элемента в очередь"""
-
-        if item in self._items:
-          return True
-        else:
-          return False
+          raise IndexError("The queue is empty")
     
     def from_string(self, str_value):
 
@@ -105,9 +69,8 @@ class Queue:
         """Сохранение объекта в JSON - файл"""
 
         queue_json = {'_items' : self._items}
-        str_json = self.toJSON()
         with open(f"{filename}.json", "w") as file:
-            file.write(str_json)
+            json.dump(queue_json, file, indent=2)
 
     @staticmethod
     def load(filename):
@@ -116,20 +79,18 @@ class Queue:
 
         with open(f"{filename}.json") as file:
             obj_dict = json.load(file)
-        queue = Queue(obj_dict["_items"])
-        Queue._front = obj_dict["_front"]
-        Queue._rear = obj_dict["_rear"]
-        Queue._items = obj_dict["_items"]
-        return queue
+            queue = Queue([])
+            Queue._items = obj_dict["_items"]
+            return queue
 
     def __add__(self, other):
 
         """Перегрузка оператора сложения для очереди.
            Сложение происходит с первым элементом очереди, который после этого из нее убирается"""
 
-        if ((isinstance(other, int) and isinstance(self.front, int)) or             #   Проверка соответствия типов
-                (isinstance(other, float) and isinstance(self.front, float))):
-            result = self.front + other
+        if ((isinstance(other, int) and isinstance(self._items[0], int)) or             #   Проверка соответствия типов
+                (isinstance(other, float) and isinstance(self._items[0], float))):
+            result = self._items[0] + other
             self.dequeue()
             return result
         else:
@@ -139,41 +100,41 @@ class Queue:
 
         """Перегрузка оператора вычитания. Принцип работы аналогичен перегрузке метода сложения"""
 
-        if ((isinstance(other, int) and isinstance(self.front, int)) or             #   Проверка соответствия типов
-                (isinstance(other, float) and isinstance(self.front, float))):
-            result = self.front - other
+        if ((isinstance(other, int) and isinstance(self._items[0], int)) or             #   Проверка соответствия типов
+                (isinstance(other, float) and isinstance(self._items[0], float))):
+            result = self._items[0] - other
             self.dequeue()
             return result
         else:
-            raise ValueError
+            raise ValueError("Wrong data type")
 
     def __mul__(self, other):
 
         """Перегрузка оператора умножения. Принцип работы аналогичен перегрузке метода сложения"""
 
-        if isinstance(other, (int, float)) and isinstance(self.front, (int, float)):    #   Проверка соответствия типов
-            result = self.front * other
+        if isinstance(other, (int, float)) and isinstance(self._items[0], (int, float)):    #   Проверка соответствия типов
+            result = self._items[0] * other
             self.dequeue()
             return result
         else:
-            raise ValueError
+            raise ValueError("Wrong data type")
 
     def __truediv__(self, other):
         """Перегрузка оператора деления. Принцип работы аналогичен перегрузке метода сложения"""
-        if isinstance(other, (int, float)) and isinstance(self.front, (int, float)):    #   Проверка соответствия типов
-            result = self.front / other
+        if isinstance(other, (int, float)) and isinstance(self._items[0], (int, float)):    #   Проверка соответствия типов
+            result = self._items[0] / other
             self.dequeue()
             return result
         else:
-            raise ValueError
+            raise ValueError("Wrong data type")
 
     def __floordiv__(self, other):
 
         """Перегрузка оператора деления нацело. Принцип работы аналогичен перегрузке метода сложения"""
 
-        if isinstance(other, int) and isinstance(self.front, int):
-            result = self.front // other
+        if isinstance(other, int) and isinstance(self._items[0], int):
+            result = self._items[0] // other
             self.dequeue()
             return result
         else:
-            raise ValueError
+            raise ValueError("Wrong data type")

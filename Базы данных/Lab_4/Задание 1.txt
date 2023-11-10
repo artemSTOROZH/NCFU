@@ -1,0 +1,23 @@
+USE SampleDb;
+DECLARE @Perem NVARCHAR(200) = '   :разважничаться! вогнуться, бобслеист.. нарост, сверхприбыль, бит; ронять?? затошнить! геополитика,,. .боязливый. корыто,. познание,. оторопеть потопление банка     ';
+SET @Perem = REPLACE(@Perem, '!', '')
+SET @Perem = REPLACE(@Perem, '?', '')
+SET @Perem = REPLACE(@Perem, ',', '')
+SET @Perem = REPLACE(@Perem, '.', '')
+SET @Perem = REPLACE(@Perem, ':', '')
+SET @Perem = REPLACE(@Perem, ';', '')
+DECLARE @Perem_trimmed NVARCHAR(200) = TRIM(@Perem);
+DECLARE @Word_count INT = 0;
+DECLARE @new_perem NVARCHAR(200) = '';
+DECLARE @Index INT = 0;
+WHILE @Word_count < 11
+BEGIN
+IF LEN(@Perem_trimmed) = 0 BREAK
+SET @Word_count = @Word_count + 1
+IF NOT (@Word_count = 3 OR @Word_count = 5 OR @Word_count = 7 OR @Word_count = 10)
+BEGIN
+SET @new_perem += SUBSTRING(@Perem_trimmed, 1, PATINDEX('% %', @Perem_trimmed))
+END
+SET @Perem_trimmed = REPLACE(@Perem_trimmed, SUBSTRING(@Perem_trimmed, 1, PATINDEX('% %', @Perem_trimmed)), '')
+END
+PRINT(@new_perem)

@@ -1,0 +1,7 @@
+USE SampleDb;
+DECLARE @y REAL;
+DECLARE @a REAL = 45.033;
+DECLARE @b REAL = 1.11125;
+DECLARE @c REAL = 3.1415926535;
+SET @y = TAN(@a) / (@a + @b + @c) * SQUARE(@a * @b * @c);
+PRINT(@y)

@@ -1,0 +1,4 @@
+SELECT        dbo.Employee.FirstName AS Имя, dbo.Employee.LastName AS Фамилия, dbo.Works_on.Job AS Должность, dbo.Projects.ProjectName AS [Название проекта]
+FROM            dbo.Employee INNER JOIN
+                dbo.Works_on ON dbo.Employee.EmpId = dbo.Works_on.EmpId INNER JOIN
+                dbo.Projects ON dbo.Works_on.ProjectNumber = dbo.Projects.ProjectNumber

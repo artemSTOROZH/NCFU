@@ -1,0 +1,6 @@
+SELECT        TOP (100) PERCENT dbo.Employee.LastName, dbo.Employee.FirstName, dbo.Works_on.Job, dbo.Projects.ProjectName, dbo.Works_on.EnterDate
+FROM            dbo.Works_on INNER JOIN
+                         dbo.Projects ON dbo.Works_on.ProjectNumber = dbo.Projects.ProjectNumber INNER JOIN
+                         dbo.Employee ON dbo.Works_on.EmpId = dbo.Employee.EmpId
+WHERE        (dbo.Works_on.Job LIKE '%Analyst%')
+ORDER BY dbo.Works_on.EnterDate DESC, dbo.Employee.LastName, dbo.Employee.FirstName

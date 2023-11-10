@@ -1,0 +1,3 @@
+SELECT        FirstName, DepartmentName, DepLocation, LastName
+FROM            dbo.[Запрос Сотрудники + Отделы]
+WHERE        (LastName = 'Cure')

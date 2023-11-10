@@ -1,0 +1,4 @@
+USE SampleDb;
+DECLARE @perem varchar(200) = 'время ';
+DECLARE @time time = CURRENT_TIMESTAMP;
+PRINT(@perem + CONVERT(varchar(20), @time))

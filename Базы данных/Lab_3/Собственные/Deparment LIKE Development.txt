@@ -1,0 +1,5 @@
+SELECT        TOP (100) PERCENT dbo.Employee.LastName, dbo.Employee.FirstName, dbo.Department.DepartmentName
+FROM            dbo.Department INNER JOIN
+                         dbo.Employee ON dbo.Department.DepartmentNumber = dbo.Employee.DepartmentNumber
+WHERE        (dbo.Department.DepartmentName LIKE '%Development%')
+ORDER BY dbo.Employee.LastName, dbo.Employee.FirstName
