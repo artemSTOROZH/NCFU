@@ -1,4 +1,7 @@
-USE SampleDb;
-SELECT EmpId From Works_on WHERE YEAR(EnterDate) = 2023 AND MONTH(EnterDate) = 3
+USE Dismissal
+SELECT DocumentID, EmpID, RegDate, DismissalDate FROM DIsmissalDocument 
+WHERE EmpID IN
+(SELECT EmpID FROM Employee WHERE YEAR(EnterDate) = 2022
 EXCEPT
-SELECT EmpId FROM Employee WHERE DepartmentNumber IS NULL
+SELECT EmpID FROM Employee WHERE DepartmentName = 'Accounting'
+)
