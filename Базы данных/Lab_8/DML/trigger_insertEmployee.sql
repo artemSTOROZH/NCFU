@@ -1,0 +1,14 @@
+GO
+CREATE TABLE InsertedEmployees(
+EmpID INTEGER NOT NULL,
+UserName VARCHAR(20),
+Date DATE,
+)
+GO
+CREATE TRIGGER trigger_insertEmployee
+ON Employee AFTER INSERT
+AS BEGIN
+DECLARE @EmpID INTEGER
+SELECT @EmpID = (SELECT EmpID FROM inserted)
+INSERT INTO InsertedEmployees values(@EmpID, USER_NAME(), GETDATE())
+END

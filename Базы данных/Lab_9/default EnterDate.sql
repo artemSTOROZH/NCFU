@@ -1,0 +1,3 @@
+USE Dismissal
+ALTER TABLE Employee
+ADD DEFAULT SYSDATETIME() FOR EnterDate

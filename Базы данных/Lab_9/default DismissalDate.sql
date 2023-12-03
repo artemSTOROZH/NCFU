@@ -1,0 +1,3 @@
+USE Dismissal
+ALTER TABLE DismissalDocument
+ADD DEFAULT SYSDATETIME() FOR DismissalDate
