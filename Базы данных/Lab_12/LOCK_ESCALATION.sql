@@ -1,0 +1,2 @@
+USE Dismissal 
+ALTER TABLE Employee SET (LOCK_ESCALATION = DISABLE)

@@ -8,5 +8,8 @@ INSERT INTO Employee VALUES(2025, 'Filchenko', 'Alla', 'Vladimirovna', 'Recruite
 UPDATE Employee SET EnterDate = '2017-10-11' WHERE EmpID = 2024
 SAVE TRANSACTION TRAN_2;
 
-ROLLBACK TRANSACTION TRAN_1;
+INSERT INTO Employee VALUES(2026, 'Somov', 'Anatoliy', 'Aleksandrovich', 'Operator', 'Research and Development', '2017-12-01')
+
+ROLLBACK TRANSACTION TRAN_2;
+
 COMMIT TRANSACTION;
