@@ -1,0 +1,1 @@
+ALTER USER User_2 WITH DEFAULT_SCHEMA = Views_Dismissal
