@@ -1,0 +1,6 @@
+﻿  Factory.cpp
+C:\Users\artem\source\repos\CPP_LAB_2\CPP_LAB_2\Factory.cpp(20,28): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\artem\source\repos\CPP_LAB_2\CPP_LAB_2\Factory.cpp(35,28): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\artem\source\repos\CPP_LAB_2\CPP_LAB_2\Factory.cpp(78,28): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\artem\source\repos\CPP_LAB_2\CPP_LAB_2\Factory.cpp(92,28): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  CPP_LAB_2.vcxproj -> C:\Users\artem\source\repos\CPP_LAB_2\x64\Debug\CPP_LAB_2.exe

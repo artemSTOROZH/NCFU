@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Lab_7</string>
+    <string-array name="products">
+        <item>Молоко</item>
+        <item>Хлеб</item>
+        <item>Яйца</item>
+        <item>Мука</item>
+        <item>Сахар</item>
+        <item>Масло</item>
+        <item>Яблоки</item>
+        <item>Соль</item>
+    </string-array>
+
+    <string-array name="Languages">
+        <item>Русский</item>
+        <item>Чешский</item>
+    </string-array>
+
+    <string name="FIO">ФИО</string>
+    <string name="Login">Логин</string>
+    <string name="Email">Email</string>
+    <string name="Phone_number">Номер телефона</string>
+    <string name="Password">Пароль</string>
+    <string name="Rep_Password">Повтор пароля</string>
+    <string name="BirthDate">Дата рождения</string>
+    <string name="Product">Продукт</string>
+    <string name="Agreement">Согласие на обработку персональных данных</string>
+    <string name="Language">Язык</string>
+
+    <string name="error_validation">Ошибка! Проверьте введенные данные!</string>
+    <string name="error_password">Ошибка! Пароли не совпадают!</string>
+
+    <string name="Button_rus">Русский</string>
+    <string name="Button_cs">Чешский</string>
+    <string name="Button_validate">Подтвердить</string>
+</resources>

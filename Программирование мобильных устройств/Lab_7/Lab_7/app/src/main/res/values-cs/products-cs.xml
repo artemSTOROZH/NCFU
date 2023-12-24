@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Laboratoř_7</string>
+    <string-array name="products">
+        <item>Mléko</item>
+        <item>Chléb</item>
+        <item>Vejce</item>
+        <item>Mouka</item>
+        <item>Cukr</item>
+        <item>Olej</item>
+        <item>Jablka</item>
+        <item>Sůl</item>
+    </string-array>
+
+    <string name="FIO">CJ</string>
+    <string name="Login">ЛPřihlásit se</string>
+    <string name="Email">e-mailem</string>
+    <string name="Phone_number">Telefonní číslo</string>
+    <string name="Password">Heslo</string>
+    <string name="Rep_Password">Zopakovat heslo</string>
+    <string name="BirthDate">Datum narození</string>
+    <string name="Product">Produkt</string>
+    <string name="Agreement">Souhlas se
+        zpracováním
+        osobních
+        údajů</string>
+
+    <string name="Button_rus">Ruština</string>
+    <string name="Button_cs">Čeština</string>
+    <string name="Button_validate">Potvrdit</string>
+
+    <string name="Language">Jazyk</string>
+
+    <string name="error_validation">Chyba! Zkontrolujte zadané údaje</string>
+    <string name="error_password">Chyba! Neshoda hesla!</string>
+</resources>
